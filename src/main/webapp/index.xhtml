@@ -9,15 +9,72 @@
       xmlns:u="http://java.sun.com/jsf/composite/utill">
 
     <ui:composition template="/template/template.xhtml">
+        <title><ui:define name="title">MobileShopping</ui:define></title>
         <ui:define name="content">
+            <h:panelGrid >
+                <p:graphicImage value="resources/images/advertisement/topbanner_2.jpg" style="width: 1200px;
+                                height: 90px;
+                                margin-left: 68px;"/>
+            </h:panelGrid>
+            <h:panelGrid columns="1" style="width: 100%; background: #222222;">
+
+                <div >
+                    <ul id="nav">
+                        <li class="hsubs"><a><span class="fa fa-mobile-phone fa-2x">MOBILE PHONE</span></a>
+                            <ul class="subs">
+                                <a href="service/listSamSung.xhtml"><li class="submenu">SamSung</li></a>
+                                <a href="service/listApple.xhtml"><li class="submenu">Apple</li></a>
+                                <a href="service/listSony.xhtml"><li class="submenu">Sony</li></a>
+                            </ul>
+                        </li>
+                        <li class="hsubs"><a href="service/listAccessory.xhtml"><span class="fa fa-headphones fa-2x">ACCESSORY</span></a>
+
+                        </li>
+                        <li ><a><span class="fa fa-bus fa-2x">SERVICE</span></a></li>
+                        <li><a><span class="fa fa-credit-card fa-2x">INSTALLMENT</span></a></li>
+                        <li><a><span class="fa fa-gift fa-2x">PROMOTION</span></a></li>
+                    </ul>
+
+                </div>
+            </h:panelGrid>
             <h:form>
                 <p:growl showDetail="true" autoUpdate="true" /> 
-                <h:panelGrid columns="1" style="width: 1200px; margin: 10px auto">
+                <h:panelGrid columns="1" style="width: 1200px; margin: 10px auto; margin-top: 10px">
                     <ui:include src="/component/TopAdvertisement.xhtml"/>
+
                 </h:panelGrid>
+                
                 <h:panelGrid columns="2" style="width: 1200px; margin: 20px auto">
-                    <h:panelGrid  columns="1" style="width: 800px;">
+                    <h:panelGrid  columns="2" style="width: 800px;">
                         <ui:include src="/service/PanelBestSellingProduct.xhtml"/>
+                        <h:panelGrid  columns="1" style="width: 400px; float: right;">
+
+                        </h:panelGrid>
+                        <!--New Product -->
+                        <h:panelGrid style="width: 800px;" columns="2">
+                            <f:facet name="header">
+                                <h:panelGrid style="border-bottom: 1px #E7E7E7 dashed;
+                                             border-top: 1px #E7E7E7 solid; 
+                                             width: 800px;">
+                                    <h:panelGrid>
+                                        <p:commandLink value="New Product" 
+                                                       style="text-decoration: none; 
+                                                       color: #666666; font-size: 20px!important;"/>
+                                    </h:panelGrid>
+                                </h:panelGrid>
+                            </f:facet>
+                            <p:dataGrid layout="grid" columns="4" 
+                                        value="#{productController.listnewProduct()}"
+                                        var="item">
+                                <p:column>
+                                    <h:panelGrid>
+                                        <u:ProductCart product="#{item}"/>                                        
+                                    </h:panelGrid>
+                                </p:column>
+                            </p:dataGrid>
+
+                        </h:panelGrid>
+
                         <!--New Product -->
                         <h:panelGrid style="width: 800px;">
                             <f:facet name="header">
@@ -25,7 +82,7 @@
                                              border-top: 1px #E7E7E7 solid; 
                                              width: 800px;">
                                     <h:panelGrid>
-                                        <p:commandLink value="New Product" 
+                                        <p:commandLink value="TOP PRODUCT" 
                                                        style="text-decoration: none; 
                                                        color: #666666; font-size: 20px!important;"/>
                                     </h:panelGrid>

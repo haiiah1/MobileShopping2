@@ -1,0 +1,39 @@
+
+
+#nav1 div{
+    margin: 5px;
+    border-right: 1px dotted black;
+    padding: 28px;
+    vertical-align: middle;
+    font-size: 30px;
+}
+#nav1 div:last-child{
+    border: none;
+}
+
+
+a:hover{
+    color: #eb9316;
+}
+nav.service{
+    margin-left: 280px;
+    width: 960px;
+}
+#service{
+        
+    vertical-align: middle;
+    padding: 0;
+    margin-left: 300px;
+}
+#service div{
+    margin: 5px ;
+    border-right: 1px dotted black;
+    padding: 28px;
+    vertical-align: middle;
+    font-size: 30px;
+}
+#service div:last-child{
+    border: none;
+}
+
+

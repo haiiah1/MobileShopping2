@@ -65,35 +65,7 @@
 
                     </f:facet>
                 </p:toolbar>
-                <h:panelGrid columns="9" >
-                    <p:outputLabel value="Category" for="category"/>
-                    <p:selectOneMenu value="#{productController.categoryID}" id="category">
-                        <f:selectItems value="#{productController.listCate}" var="n"
-                                       itemValue="#{n.categoryID}" itemLabel="#{n.name}"/>
-                    </p:selectOneMenu>
-                    <p:outputLabel value="Manufacturer" for="manufacturer"/>
-                    <p:selectOneMenu value="#{productController.manufacturer}" id="manufacturer">                        
-                        <f:selectItem itemLabel="Apple" itemValue="Apple"/>
-                        <f:selectItem itemLabel="Samsung" itemValue="Samsung"/>
-                        <f:selectItem itemLabel="HTC" itemValue="HTC"/>
-                        <f:selectItem itemLabel="Blackberry" itemValue="Blackberry"/>
-                    </p:selectOneMenu>
-                    <p:outputLabel value="From" for="price1"/>
-                    <p:selectOneMenu value="#{productController.unit1}" id="price1">
-                        <f:selectItem itemLabel="1000000.0" itemValue="1000000.0"/>
-                        <f:selectItem itemLabel="3000000.0" itemValue="3000000.0"/>
-                        <f:selectItem itemLabel="5000000.0" itemValue="5000000.0"/>
-                        <f:selectItem itemLabel="10000000.0" itemValue="10000000.0"/>
-                    </p:selectOneMenu>
-                    <p:outputLabel value="To" for="price2"/>
-                    <p:selectOneMenu value="#{productController.unit2}" id="price2">
-                        <f:selectItem itemLabel="3000000.0" itemValue="3000000.0"/>
-                        <f:selectItem itemLabel="5000000.0" itemValue="5000000.0"/>
-                        <f:selectItem itemLabel="10000000.0" itemValue="10000000.0"/>
-                        <f:selectItem itemLabel="15000000" itemValue="15000000"/>
-                    </p:selectOneMenu>
-                    <p:commandButton action="#{productController.searchProduct2()}" value="Search"/>
-                </h:panelGrid>
+               
             </h:form>            
 
         </ui:composition>
