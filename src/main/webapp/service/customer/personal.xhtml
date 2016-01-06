@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <ui:composition template="/template/template.xhtml">
+        <ui:define name="content">
+            <h:form>
+                <h:panelGrid style="width: 1200px; margin: 15px auto;">
+                    <h:panelGrid>
+                       
+                        <h:panelGrid style="background: rgba(34, 34, 34, 0.85) none repeat scroll 0% 0%;
+                                     width: 1200px; transition: margin 0.15s linear 0s;
+                                     margin-top: 40px; position: relative;">
+                            <h:panelGrid columns="4">
+                                <p:graphicImage value="../..#{customerController.cus.picture}" 
+                                                style="width: 150px; height: 150px;
+                                                border-radius: 100px; border: 2px #E7E7E7 solid;"
+                                                alt="#{customerController.cus.picture}"/>
+                                <h:panelGrid>
+                                    <h:outputLabel value="#{customerController.cus.name}" 
+                                                   style="color: #FFF; font-weight: bold; font-size: 25px;"/>
+                                    <h:outputLabel value="#{customerController.cus.mail}" 
+                                                   style="color: #FFF; font-weight: bold; font-size: 15px;"/>
+                                </h:panelGrid>
+                                <p:spacer height="10" width="600"/>
+                               
+                            </h:panelGrid>
+
+                        </h:panelGrid>
+                    </h:panelGrid>
+
+                    <p:tabView>
+                        <p:tab title="Thông Tin Cá Nhân">
+                            <ui:include src="personalInfomation.xhtml"/>
+                        </p:tab>
+                        <p:tab title="Lịch Sử Giao Dịch">
+                            <ui:include src="paymentHistory.xhtml"/>
+                        </p:tab>
+                        <p:tab title="Tin Nhắn">
+                            <h2>Tính Năng Này Sẽ Có Trong Phiên Bản Sau</h2>
+                        </p:tab>
+                        <p:tab title="Thông Báo">
+                             <h2>Tính Năng Này Sẽ Có Trong Phiên Bản Sau</h2>
+                        </p:tab>
+                    </p:tabView>
+                    <p:spacer width="15" height="200"/>
+                </h:panelGrid>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+

@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"          
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <body>
+
+        <ui:composition template="./template/StaffTemplate.xhtml">
+
+            <ui:define name="content">                
+                <h:form>
+                    <p:growl showDetail="true" autoUpdate="true" /> 
+                    <h:panelGrid columns="2" style="width: 1200px; margin: 10px auto">
+                        <h:panelGrid columns="1">
+                            <h:panelGrid columns="2" style="width: 800px;">
+                                <p:panel style="height: 500px; width: 400px">                            
+                                    <p:graphicImage id="img" value="#{productController.p.mainImageURL}"
+                                                    height="300" width="300"
+                                                    style="padding:5px 10px !important; margin-top: 100px;"                                 
+                                                    >                               
+                                    </p:graphicImage> 
+                                </p:panel>
+                                <p:panel style="height: 500px; width: 400px; border: 1px solid rgb(234,234,234);
+                                         background-color: rgb(250,250,250)">
+                                    <div style="background-color: rgb(82,189,248);
+                                         font-weight: bold; border: 1px solid black;
+                                         font-size: 2em; color: white; text-align: center">
+                                        <h:outputLabel value="#{productController.p.name}" />
+                                    </div>
+                                    <br/>
+                                    <div style="color: red; font-size: 1.5em; text-align: center">
+                                        <h:outputLabel value="#{productController.p.unitPrice}"/> đ
+                                    </div>
+                                    <br/>                                                           
+                                    <h:panelGrid columns="2" style="margin-bottom:10px;"
+                                                 cellpadding="5">                                        
+                                        <p:outputLabel for="color" value="Color: "
+                                                       style="margin: 0 80px;"/>                                                                                                                           
+                                        <p:selectOneRadio id="color" value="#{cartController.color}"  layout="grid" columns="1">
+                                            <f:selectItems value="#{productController.p.colorsList}" var="c" itemLabel="#{c.name}" itemValue="#{c.name}"/>
+                                        </p:selectOneRadio>
+                                        <h:outputLabel value="Status: " style="margin: 0 80px;"/>
+                                        <p:panel style="background-color: rgb(250,250,250);padding: 0 ">
+                                            <h:outputLabel rendered="#{productController.p.quantityInStock != 0}"
+                                                           value="In Stock" style="color: greenyellow"/>
+                                            <h:outputLabel rendered="#{productController.p.quantityInStock == 0}"
+                                                           value="Out of Stock" style="color: red"/>
+                                        </p:panel>
+                                        <h:outputLabel value="Quantity: " style="margin: 0 80px;" />
+                                        <p:selectOneMenu value="#{cartController.buyQuantity}" 
+                                                         style="color: #000; width: 75px;"
+                                                         >
+                                            <c:forEach var="number" 
+                                                       begin="1" 
+                                                       end="10">
+                                                <f:selectItem itemLabel="#{number}" 
+                                                              itemValue="#{number}"/>
+                                            </c:forEach>
+                                        </p:selectOneMenu>
+                                    </h:panelGrid>
+                                    <div style="text-align: center">
+                                        <p:commandButton icon="fa fa-shopping-cart" value="Add to cart" 
+                                                         action="#{cartController.addtoCart(productController.p)}"
+                                                         style="height: 40px; width: 100px;
+                                                         background-color: rgb(82,189,248); text-shadow: none;
+                                                         margin-left: 18px;">
+                                        </p:commandButton>
+                                    </div>
+                                </p:panel>                                         
+
+                            </h:panelGrid>
+                            <h:panelGrid columns="2" style="width: 800px; margin: 10px auto; border: 1px solid black">
+                                <p:outputLabel value="Manufacturer: "/>
+                                <p:outputLabel value="#{productController.p.manufacturer}"/>
+                                <p:outputLabel value="Model: "/>
+                                <p:outputLabel value="#{productController.p.model}"/>
+                                <p:outputLabel value="Screen: "/>
+                                <p:outputLabel value="#{productController.p.detailDetailID.screen}"/>
+                                <p:outputLabel value="Camera: "/>
+                                <p:outputLabel value="#{productController.p.detailDetailID.camera}"/>
+                                <p:outputLabel value="CPU: "/>
+                                <p:outputLabel value="#{productController.p.detailDetailID.cpu}"/>
+                                <p:outputLabel value="VGA: "/>
+                                <p:outputLabel value="#{productController.p.detailDetailID.vga}"/>
+                                <p:outputLabel value="Ram: "/>
+                                <p:outputLabel value="#{productController.p.detailDetailID.ram}"/>
+                                <p:outputLabel value="Pin: "/>
+                                <p:outputLabel value="#{productController.p.detailDetailID.pin}"/>
+                                <p:outputLabel value="Connection: "/>
+                                <p:outputLabel value="#{productController.p.detailDetailID.connection}"/>
+                                <p:outputLabel value="Sim Slot: "/>
+                                <p:outputLabel value="#{productController.p.detailDetailID.simSlot}"/>
+                                <p:outputLabel value="Guarantee: "/>
+                                <p:outputLabel value="#{productController.p.detailDetailID.guarantee}"/>
+                                <p:outputLabel value="Internal storage: "/>
+                                <p:outputLabel value="#{productController.p.detailDetailID.internalstorage}"/>
+                            </h:panelGrid>
+                        </h:panelGrid>
+                        <h:form style="width: 400px;">s</h:form>
+                    </h:panelGrid>                    
+                </h:form>
+
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

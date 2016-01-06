@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:a="http://java.sun.com/jsf/passthrough">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form style="height: 400px; width: 400px; margin: 100px 0px 0px 400px;">                        
+            <h:panelGrid columns="2">     
+                <p:outputLabel for="mail" value="Mail: "/>
+                <p:inputText value="#{staffController.mail}" a:autofocus="autofocus"
+                             p:placeholder="" id="mail"
+                             style="height: 20px;" size="40"/> 
+                <p:outputLabel for="password" value="Password: "/>
+                <p:inputText value="#{staffController.password}" type="password"
+                             id="password"
+                             style="height: 20px;" size="40"/> 
+
+                <h:panelGrid columns="2">
+                    <p:selectBooleanCheckbox />
+                    <p:outputLabel value="Remember me"/>
+                </h:panelGrid>
+                <h:outputText value="#{staffController.message}" style="color:red; font-style: italic;
+                              font-size: 1.5em"/>
+                <p:commandButton value="Login"
+                                 style="background: #288AD6; 
+                                 width: 100px; height: 45px; color: #FFF;
+                                 text-shadow:  none;"                                 
+                                 action="#{staffController.login()}"
+                                 />                                
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

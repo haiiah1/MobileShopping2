@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 20, 2015, 11:02:28 PM
+    Author     : Acer E1-571
+*/
+
+.ui-steps .ui-steps-item {
+    width: 300px;
+}
+
+.ui-state-highlight {
+    text-shadow: none !important;
+}
+
+.ui-steps.custom {
+    margin-bottom: 30px;
+}
+
+.ui-steps.custom .ui-steps-item .ui-menuitem-link {
+    height: 10px;
+    padding: 0 1em;
+    color: #404041;
+    font-weight: bold;
+}
+
+.ui-steps.custom .ui-steps-item .ui-steps-number {
+    background-color: #0081c2;
+    color: #FFF;
+    display: inline-block;
+    width: 30px;
+    border-radius: 10px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+.ui-state-highlight a {
+    color: #0081c2!important;
+    font-size: 15px;
+    font-weight: bold;
+}
+.ui-spinner-button {
+    height: auto;
+}
+
+.ui-datatable-odd {
+    background: #FFF;
+}
+
+.ui-datatable-even {
+    background: #FFF;
+}
+
+.outputText {
+    font-weight: bold!important;
+    color: #404041;
+}
+
+.qSubmitButton {
+    text-shadow: none;
+    background: #0081c2;
+    color: #FFF;
+}
+
+.outputTextInPanel {
+    font-weight: bold!important;
+    color: #404041;
+    font-size: 12px;
+}
+
+.moneyFormat {
+    font-weight: bold!important;
+    color: #cc0000;
+    font-size: 15px;
+}
+
+.qPauseButton {
+    background: #9900cc!important;
+}
+
+
+.qDestroyButton {
+    background: #ff3333!important;
+}
+
+.qConfirmButton {
+    background: #6666ff!important;
+}
+
+.qNewButton {
+    background: #99ff66!important;
+}
+
+.qPauseButton, .qDestroyButton, .qConfirmButton, .qNewButton {
+    text-shadow: none!important;
+    height: 50px;
+    width: 200px;  
+    color: #FFF!important;
+    font-weight: bold;
+}

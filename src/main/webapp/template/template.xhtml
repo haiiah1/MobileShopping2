@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Template</title>
+        <h:outputStylesheet library="css" name="font.css"/>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputStylesheet library="css" name="cart-page.css"/>
+        <h:outputStylesheet library="css" name="panel-product.css"/>
+        
+        <h:outputStylesheet library="primefaces" name="primefaces.css"/>
+        <h:outputScript library="primefaces" name="jquery/jquery.js" 
+                        target="head" />
+        <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" 
+                        target="head" />
+        <h:outputScript library="js" name="jsfcrud.js"/>
+    </h:head>
+    <h:body style="margin: 0 auto;" >
+        
+         <p:growl id="msg"/>
+        <ui:insert id="header" name="header">
+            <ui:include src="/component/header.xhtml"/>
+        </ui:insert>
+
+        <ui:insert id="content" name="content">
+            <h3>This is Default Content </h3> <br/>
+            <h1>Tinh day la day</h1>
+            .<br/>
+            .<br/>
+            .<br/>
+            .<br/>
+            .
+<br/>            .<br/>
+            .<br/>
+            .<br/>
+            .<br/>
+            .<br/>
+            .<br/>
+            .<br/>
+            .<br/>
+            .<br/>
+            .<br/>
+            .<br/>
+            .<br/>
+            .<br/>
+            .
+            .
+            ..
+            
+            .
+        </ui:insert>
+        
+        <ui:insert id="footer" name="footer">
+            <ui:include src="/component/footer.xhtml"/>
+        </ui:insert>
+    </h:body>
+</html>
+

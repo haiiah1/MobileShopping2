@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:u="http://java.sun.com/jsf/composite/utill">
+    <h:body>
+        <div class="ui-grid-row">
+            <h:form id="bestselling">
+                <p:carousel id="topPanel" value="#{productController
+                                                   .listmost()}" 
+                                    var="product" 
+                                    numVisible="4" circular="true"
+                                    autoPlayInterval="9000">
+                            <f:facet name="header">
+                                <p:link value="Hot" 
+                                        style="text-decoration:none;"/>
+                            </f:facet>
+
+                            <u:ProductCart product="#{product}"/>
+                </p:carousel>
+            </h:form>
+        </div>
+    </h:body>
+</html>
+

@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>STAFF</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./template/StaffTemplate.xhtml">
+            <ui:define name="content">
+                <h:form style="height: 100px">
+                    <table>
+                        <tr>
+                            <td style="height: 50px">
+                                <p:panelMenu style="width: 450px; height: 100px">
+                                    <p:submenu label="Manage Product">
+                                        <p:menuitem value="Add Product" outcome="/staff/manage/AddProduct" icon="ui-icon-disk" />
+                                        <p:menuitem value="Update,D Product" outcome="/index"  icon="ui-icon-arrowrefresh-1-w" />
+                                    </p:submenu>
+                                </p:panelMenu>
+                            </td>
+
+                            <td style="height: 50px">
+                                <p:panelMenu style="width: 450px; height: 100px">
+                                    <p:submenu label="Manage Customer">
+                                        <p:menuitem value="Add Product" outcome="/staff/manage/AddProduct" icon="ui-icon-disk" />
+                                        <p:menuitem value="Update,D Product" outcome="/index"  icon="ui-icon-arrowrefresh-1-w" />
+                                    </p:submenu>
+                                </p:panelMenu>
+                            </td>
+                            <td style="height: 50px">
+                                <p:panelMenu style="width: 450px; height: 100px">
+                                    <p:submenu label="Manage News">
+                                        <p:menuitem value="Add Product" outcome="/staff/manage/AddProduct" icon="ui-icon-disk" />
+                                        <p:menuitem value="Update,D Product" outcome="/index"  icon="ui-icon-arrowrefresh-1-w" />
+                                    </p:submenu>
+                                </p:panelMenu>
+                            </td>
+                        </tr>
+
+                    </table>
+                </h:form>
+                <div style="height:1040px; width: 800px; border: 1px solid black;margin :0 auto;">
+                    <div style=" margin: 0 210px;">
+                        <h:form>
+                            <h:panelGrid columns="2">
+                                <img src="../resources/images/Thank-You.jpg" alt="Staff" height="250" width="250"/>
+
+                                <h1 style="color: #00ff33;font-size: 2em;">Welcome! #{staffController.st.name}</h1>
+                            </h:panelGrid>
+                            <br/>
+                            <h:panelGrid columns="2">
+                                Staff-ID:
+                                <p:inputText value="#{staffController.st.staffID}"  style="width: 250px;height: 25px;margin: 10px 0;"  readonly="true"/>
+
+                                Mail: 
+                                <p:inputText value="#{staffController.st.mail}"  style="width: 250px;height: 25px;margin: 10px 0;" />
+
+                                PassWord: 
+                                <p:inputText value="#{staffController.st.password}"  style="width: 250px;height: 25px;margin: 10px 0;"  type="password"
+                                             readonly="true"/>
+
+                                Name: 
+                                <p:inputText value="#{staffController.st.name}"  style="width: 250px;height: 25px;margin: 10px 0;" />
+
+                                DOB: 
+                                <p:inputText value="#{staffController.st.dateOfBirth}"  style="width: 250px;height: 25px;margin: 10px 0;"  type="date"/>
+
+                                DateOfJoin: 
+                                <p:inputText value="#{staffController.st.dateOfJoin}"  style="width: 250px;height: 25px;margin: 10px 0;"  type="date"/>
+
+                                Tel: 
+                                <p:inputText value="#{staffController.st.tel}"  style="width: 250px;height: 25px;margin: 10px 0;"  />
+
+                                Country: 
+                                <p:inputText value="#{staffController.st.country}" style="width: 250px;height: 25px;margin: 10px 0;"  />
+
+                                City: 
+                                <p:inputText value="#{staffController.st.city}"  style="width: 250px;height: 25px;margin: 10px 0;" />
+
+                                District: 
+                                <p:inputText value="#{staffController.st.district}"  style="width: 250px;height: 25px;margin: 10px 0;" />
+
+                                Address: 
+                                <p:inputText value="#{staffController.st.address}"  style="width: 250px;height: 25px;margin: 10px 0;" />
+                                <h:outputLabel value=" "/>
+                                <p:commandButton action="#" value="Update" style="background: #288AD6; float: right;
+                                                 width: 100px; height: 40px; color: #FFF;
+                                                 text-shadow:  none;"/>                        
+                            </h:panelGrid>
+                        </h:form>
+                    </div>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

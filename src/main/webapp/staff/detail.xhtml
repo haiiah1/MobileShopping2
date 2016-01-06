@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./template/StaffTemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <h:panelGrid columns="2">
+                        <p:outputLabel value="Detail-ID: "/>
+                        <p:inputText value="#{detailControler.d.detailID}"/>
+                        <p:outputLabel value="Screen: "/>
+                        <p:inputText value="#{detailControler.d.screen}"/>
+                        <p:outputLabel value="Camera: "/>
+                        <p:inputText value="#{detailControler.d.camera}"/>
+                        <p:outputLabel value="CPU: "/>
+                        <p:inputText value="#{detailControler.d.cpu}"/>
+                        <p:outputLabel value="VGA: "/>
+                        <p:inputText value="#{detailControler.d.vga}"/>
+                        <p:outputLabel value="Ram: "/>
+                        <p:inputText value="#{detailControler.d.ram}"/>
+                        <p:outputLabel value="Pin: "/>
+                        <p:inputText value="#{detailControler.d.pin}"/>
+                        <p:outputLabel value="Connection: "/>
+                        <p:inputText value="#{detailControler.d.connection}"/>
+                        <p:outputLabel value="SimSlot"/>
+                        <p:inputText value="#{detailControler.d.simSlot}"/>
+                        <p:outputLabel value="Quarantee"/>
+                        <p:inputText value="#{detailControler.d.guarantee}"/>
+                        <p:outputLabel value="Internal Storage: "/>
+                        <p:inputText value="#{detailControler.d.internalstorage}"/>
+                        <p:outputLabel value="#{detailControler.addmessage}"/>
+                        <p:commandButton action="#{detailControler.addDetail()}" />
+                    </h:panelGrid>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

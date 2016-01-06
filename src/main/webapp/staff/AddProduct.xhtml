@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <body>
+
+        <ui:composition template="./template/StaffTemplate.xhtml">
+
+
+            <ui:define name="content">
+                <h:form>
+                    <h:panelGrid columns="2" style="width: 800px; margin: 10px auto; border: 1px solid black">
+                        <p:outputLabel value="ProductID: " />
+                        <p:inputText value="#{productController.p.productID}"/>
+                        <p:outputLabel value="Name" />
+                        <p:inputText value="#{productController.p.name}"/>
+                        <p:outputLabel value="Introduce: " />
+                        <p:inputText value="#{productController.p.introduce}"/>
+                        <p:outputLabel value="CategoryName: " />
+                        <p:selectOneMenu value="#{productController.categoryID}" id="category">
+                        <f:selectItems value="#{productController.listCate}" var="n"
+                                       itemValue="#{n.categoryID}" itemLabel="#{n.name}"/>
+                        </p:selectOneMenu>
+                        <p:outputLabel value="Detail-ID:" />
+                        <p:inputText value="#{productController.p.detailDetailID}" />
+                        <p:outputLabel value="QuantityInStock: " />
+                        <p:inputText value="#{productController.p.quantityInStock}"/>
+                        <p:outputLabel value="UnitPrice: " />
+                        <p:inputText value="#{productController.p.unitPrice}"/>
+                        <p:outputLabel value="PricePromotion: " />
+                        <p:inputText value="#{productController.p.pricePromotion}"/>
+                        <p:outputLabel value="Status: " />
+                        <p:inputText value="#{productController.p.status}"/>
+                        <p:outputLabel value="EnterDate: "/>
+                        <p:inputText value="#{productController.p.enterDate}" type="date"/>
+                        <p:outputLabel value="UpdateDate" />
+                        <p:inputText value="#{productController.p.updateDate}" type="date"/>
+                        <p:outputLabel value="PublishDate" />
+                        <p:inputText value="#{productController.p.publishDate}" type="date"/>
+                        <p:outputLabel value="Model: " />
+                        <p:inputText value="#{productController.p.model}"/>
+                        <p:outputLabel value="SoldQuantity: " />
+                        <p:inputText value="#{productController.p.soldQuantity}"/>
+                        <p:outputLabel value="MainImageName: " />
+                        <p:inputText value="resources/images/product/#{productController.p.mainImageURL}"/>
+                        <p:outputLabel value="#{productController.addmessage}"/>
+                        <p:commandButton value="Add" action="#{productController.addProduct()}" style="background: #288AD6;
+                                                     width: 100px; height: 40px; color: #FFF;
+                                                     text-shadow:  none;"/>
+                    </h:panelGrid>
+                        
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

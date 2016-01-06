@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pe="http://primefaces.org/ui/extensions"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition>
+        <h:panelGrid>
+            <pe:masterDetail id="masterDetail" 
+                             level="1">  
+                <pe:masterDetailLevel level="1" 
+                                      levelLabel="Danh Sách Hoá Đơn Của Bạn">  
+                    <p:dataTable value=""
+                                 var="items"
+                                 id="listOrder" 
+                                 emptyMessage="Không Có Giao Dịch Nào Được Tìm Thấy"
+                                 widgetVar="listOrder">
+                        <f:facet name="header">
+                            <p:panelGrid columns="3">
+                                <p:panelGrid>
+                                    <p:commandButton value="Tất Cả Hóa Đơn" 
+                                                   
+                                                     update="listOrder"
+                                                     icon="fa fa-refresh"
+                                                     style="height: 35px; background: #288AD6;
+                                                     text-shadow: none; color: #FFF;"/>
+                                    <p:spacer height="15" width="15"/>
+                                    <p:commandButton value="In Danh Sách Hóa Đơn" 
+                                                     icon="fa fa-refresh"
+                                                     style="height: 35px; background: #6666ff;
+                                                     text-shadow: none; color: #FFF;"/>
+                                </p:panelGrid>
+                                <p:spacer height="15" width="1000"/>
+                                <p:panelGrid>
+                                    <p:inputText id="globalFilter" 
+                                                 onkeyup="PF('listOrder').filter()" 
+                                                 style="width:200px" 
+                                                 placeholder="Bạn Hãy Nhập Từ Khóa"/>
+                                    <p:button icon="fa fa-search"/>
+                                </p:panelGrid>
+                            </p:panelGrid>
+                        </f:facet>
+                        <p:column>
+                              <f:facet name="header">
+                                <h:outputText value="Mã Hóa Đơn"/>
+                            </f:facet>
+                            <h:outputText value="#{items.orderID}"></h:outputText>
+                        </p:column>
+                         <p:column>
+                              <f:facet name="header">
+                                <h:outputText value="ngay"/>
+                            </f:facet>
+                             <h:outputText value="#{items.orderDate}"></h:outputText>
+                        </p:column>
+                       
+                    </p:dataTable>
+                </pe:masterDetailLevel>  
+
+            
+            </pe:masterDetail>  
+        </h:panelGrid>
+    </ui:composition>
+</html>
+

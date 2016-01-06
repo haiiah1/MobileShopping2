@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:u="http://java.sun.com/jsf/composite/utill">
+
+    <ui:composition template="/template/template.xhtml">
+        <ui:define name="content">
+            <h:form>
+                <p:growl showDetail="true" autoUpdate="true" /> 
+                <h:panelGrid columns="1" style="width: 1200px; margin: 10px auto">
+                    <ui:include src="/component/TopAdvertisement.xhtml"/>
+                </h:panelGrid>
+                <h:panelGrid columns="2" style="width: 1200px; margin: 20px auto">
+                    <h:panelGrid  columns="1" style="width: 800px;">
+                        <ui:include src="/service/PanelBestSellingProduct.xhtml"/>
+                        <!--New Product -->
+                        <h:panelGrid style="width: 800px;">
+                            <f:facet name="header">
+                                <h:panelGrid style="border-bottom: 1px #E7E7E7 dashed;
+                                             border-top: 1px #E7E7E7 solid; 
+                                             width: 800px;">
+                                    <h:panelGrid>
+                                        <p:commandLink value="New Product" 
+                                                       style="text-decoration: none; 
+                                                       color: #666666; font-size: 20px!important;"/>
+                                    </h:panelGrid>
+                                </h:panelGrid>
+                            </f:facet>
+                            <p:dataGrid layout="grid" columns="4" 
+                                        value="#{productController.listnewProduct()}"
+                                        var="item">
+                                <p:column>
+                                    <h:panelGrid>
+                                        <u:ProductCart product="#{item}"/>                                        
+                                    </h:panelGrid>
+                                </p:column>
+                            </p:dataGrid>
+                        </h:panelGrid>
+                        <!-- Accessories-->
+                        <h:panelGrid style="width: 800px;">
+                            <f:facet name="header">
+                                <h:panelGrid style="border-bottom: 1px #E7E7E7 dashed;
+                                             border-top: 1px #E7E7E7 solid; 
+                                             width: 800px;">
+                                    <h:panelGrid>
+                                        <p:commandLink value="Accessories" 
+                                                       style="text-decoration: none; 
+                                                       color: #666666; font-size: 20px!important;"/>
+                                    </h:panelGrid>
+                                </h:panelGrid>
+                            </f:facet>
+                            <p:dataGrid layout="grid" columns="4" 
+                                        value="#{productController.listnewProduct()}"
+                                        var="item">
+                                <p:column>
+                                    <h:panelGrid>
+                                        <u:ProductCart product="#{item}"/>
+                                    </h:panelGrid>
+                                </p:column>
+                            </p:dataGrid>
+                        </h:panelGrid>
+                    </h:panelGrid>                    
+                    <h:panelGrid  columns="1" style="width: 400px;">
+                        <p:panelGrid columns="1">
+                            <p:graphicImage value="/resources/images/advertisement/giaohang.gif" 
+                                            style="width: 300px; height: 170px;"/>
+                            <p:spacer width="15" height="20"/>
+                        </p:panelGrid>
+                        <p:panelGrid columns="1">
+                            <p:graphicImage value="/resources/images/advertisement/adver.jpg" 
+                                            style="width: 300px; height: 800px;"/>
+                        </p:panelGrid>
+                    </h:panelGrid>
+                </h:panelGrid>                 
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <body>
+
+        <ui:composition template="./template/AdminTemplate.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <h:panelGrid columns="2">
+                        <p:outputLabel value="Staff ID: " for="id"/>
+                        <p:inputText value="#{staffController.st.staffID}" id="id" required="true"/>
+                        <p:outputLabel value="Mail: " for="mail"/>
+                        <p:inputText value="#{staffController.st.mail}" id="mail" required="true"/>
+                        <p:outputLabel value="Password: " for="pass"/>
+                        <p:inputText value="#{staffController.st.password}" id="pass" required="true"/>
+                        <p:outputLabel value="Name: " for="name"/>
+                        <p:inputText value="#{staffController.st.name}" id="name"/>
+                        <p:outputLabel value="Date of Birth: " for="dob"/>
+                        <p:calendar value="#{staffController.st.dateOfBirth}" id="dob"/>
+                        <p:outputLabel value="Date of Join:" for="doj"/>
+                        <p:calendar value="#{staffController.st.dateOfJoin}" id="doj"/>
+                        <p:outputLabel value="Tel: " for="tel"/>
+                        <p:inputText value="#{staffController.st.tel}" id="tel"/>
+                        <p:outputLabel value="Address: " for="address"/>
+                        <p:inputText value="#{staffController.st.address}" id="address"/>
+                        <p:outputLabel value="District: " for="dist"/>
+                        <p:inputText value="#{staffController.st.district}" id="dist"/>
+                        <p:outputLabel value="City: " for="city"   />
+                        <p:inputText value="#{staffController.st.city}" id="city"/>
+                        <p:outputLabel value="Country: " for="cont"/>
+                        <p:inputText value="#{staffController.st.country}" id="cont"/>
+                        <p:outputLabel value="Picture Url: " for="pic"/>
+                        <p:inputText value="#{staffController.st.picture}" id="pic" />
+                        <p:outputLabel value="#{staffController.message2}"
+                                       style="font-size: 1.5em; color: lightskyblue;"/>
+                        <p:commandButton value="Add" action="#{staffController.createStaff()}"/>
+                    </h:panelGrid>
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

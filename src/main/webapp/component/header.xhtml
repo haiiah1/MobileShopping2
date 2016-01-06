@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:body>
+        <ui:composition>
+            <h:form id="header-form">
+                <p:toolbar id="header-bar"
+                           style="background: #fff; border: none; 
+                           margin: 0px; padding: 0px;
+                           box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16), 
+                           0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+                           height: 55px;">
+                    <f:facet name="left">
+                        <p:link outcome="/index.xhtml?faces-redirect=true">
+                            <p:graphicImage value="/resources/images/home/logo.JPG" 
+                                            height="50" width="300"/>
+                        </p:link>
+                    </f:facet>
+
+                    <f:facet name="right">
+                        <h:panelGrid columns="10" style="float: right;">
+                            <p:inputText value="#{productController.name}" 
+                                         placeholder="Search"
+                                         size="50" style="height: 20px;"/>
+                            <p:commandButton icon="fa fa-search" value="Search" 
+                                             action="#{productController.searchProduct()}"
+                                             style="height: 30px; margin-bottom: 10px;"/>
+
+                            <p:spacer height="15" width="50"/>
+                            <h:panelGrid columns="1">
+                                <p:commandButton value="Cart" action="/service/cart.xhtml?faces-redirect=true"
+                                                 icon="fa fa-shopping-cart"
+                                                 style="height: 30px; margin-bottom: 10px;"/>
+                            </h:panelGrid>
+                            <h:panelGrid columns="2" rendered="#{customerController.checklogin}">
+                                <p:commandButton value="Profile"
+                                                 action="/service/customer/personal.xhtml?faces-redirect=true"
+                                                 icon="fa fa-info-circle"
+                                                 style="height: 30px; margin-bottom: 10px;"/>
+                                <p:commandButton value="Logout" action="#{customerController.logout()}"
+                                                 style="height: 30px; margin-bottom: 10px;"
+                                                 icon="fa fa-sign-out"/>
+
+                            </h:panelGrid>
+                            <h:panelGrid columns="2" rendered="#{!customerController.checklogin}"
+                                         >
+                                <p:commandButton action="/login.xhtml?faces-redirect=true"
+                                                 value="Login" icon="fa fa-user"
+
+                                                 style="height: 30px; margin-bottom: 10px;"
+                                                 />
+                                <p:commandButton value="Register" icon="fa fa-sign-in"
+                                                 action="/service/customer/register.xhtml?faces-redirect=true"
+                                                 style="height: 30px; margin-bottom: 10px;"/>
+                            </h:panelGrid>
+
+
+                        </h:panelGrid>                                                                    
+
+                    </f:facet>
+                </p:toolbar>
+                <h:panelGrid columns="9" >
+                    <p:outputLabel value="Category" for="category"/>
+                    <p:selectOneMenu value="#{productController.categoryID}" id="category">
+                        <f:selectItems value="#{productController.listCate}" var="n"
+                                       itemValue="#{n.categoryID}" itemLabel="#{n.name}"/>
+                    </p:selectOneMenu>
+                    <p:outputLabel value="Manufacturer" for="manufacturer"/>
+                    <p:selectOneMenu value="#{productController.manufacturer}" id="manufacturer">                        
+                        <f:selectItem itemLabel="Apple" itemValue="Apple"/>
+                        <f:selectItem itemLabel="Samsung" itemValue="Samsung"/>
+                        <f:selectItem itemLabel="HTC" itemValue="HTC"/>
+                        <f:selectItem itemLabel="Blackberry" itemValue="Blackberry"/>
+                    </p:selectOneMenu>
+                    <p:outputLabel value="From" for="price1"/>
+                    <p:selectOneMenu value="#{productController.unit1}" id="price1">
+                        <f:selectItem itemLabel="1000000.0" itemValue="1000000.0"/>
+                        <f:selectItem itemLabel="3000000.0" itemValue="3000000.0"/>
+                        <f:selectItem itemLabel="5000000.0" itemValue="5000000.0"/>
+                        <f:selectItem itemLabel="10000000.0" itemValue="10000000.0"/>
+                    </p:selectOneMenu>
+                    <p:outputLabel value="To" for="price2"/>
+                    <p:selectOneMenu value="#{productController.unit2}" id="price2">
+                        <f:selectItem itemLabel="3000000.0" itemValue="3000000.0"/>
+                        <f:selectItem itemLabel="5000000.0" itemValue="5000000.0"/>
+                        <f:selectItem itemLabel="10000000.0" itemValue="10000000.0"/>
+                        <f:selectItem itemLabel="15000000" itemValue="15000000"/>
+                    </p:selectOneMenu>
+                    <p:commandButton action="#{productController.searchProduct2()}" value="Search"/>
+                </h:panelGrid>
+            </h:form>            
+
+        </ui:composition>
+    </h:body>
+</html>
+

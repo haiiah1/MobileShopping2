@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <ui:composition>
+        <div class="ui-grid ui-grid-responsive">
+            <div class="ui-grid-row"
+                 style="background-color: #0081c2;
+                 box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.16), 
+                 0px 2px 10px 0px rgba(0, 0, 0, 0.12);
+                 height: 5px;">
+            </div>
+        </div>
+
+        <div class="ui-grid ui-grid-responsive">
+            <div class="ui-grid-row"
+                 style="background-color:  #f2f2f2;
+                 
+                 height: 350px;">
+                <div class="ui-grid-col-3">               
+                    <ul style="list-style-type:none; text-decoration: none; ">
+                        <li><h3>HỆ THỐNG CỬA HÀNG </h3></li>
+                        <h:link value="284 Hà Huy Tập, Đà Nẵng"/><br/>
+                        <h:link value="192 Điện Biên Phủ, Đà Nẵng"/><br/>
+                        <h:link value="100 Nguyễn Văn Linh, Đà Nẵng"/><br/>
+                        <h:link value="20 An Dương Vương, P3, Q7"/><br/>
+                        <h:link value="102 Trần Quang Khải, P12,Q8"/><br/>
+                        <h:link style="padding-top: 20px">Hádfs</h:link>
+                    </ul>
+                </div>
+
+                <div class="ui-grid-col-3">
+
+                    <ul style="list-style-type:none; text-decoration: none">
+                        <li><h3>TỔNG ĐÀI: 19001111</h3></li>
+                        <h:link value="Phím 1: Đặt hàng trước"/><br/>
+                        <h:link value="Phím 2: Giải đáp thắc mắt về kĩ thuật"/><br/>
+                        <h:link value="Phím 3: Tra cứu tiến trình bảo hành"/><br/>
+                        <h:link value="Phím 4: Hướng dẫn mua hàng từ xa"/><br/>
+                        <h:link value="Phím : Phản ánh và khiếu nại"/><br/>
+                        <h:link value="Phím: Khách hàng doanh nghiệp"/><br/>
+                    </ul>
+                </div>
+                <div class="ui-grid-col-3">         
+                    <ul style="list-style-type:none">
+                        <li><h3>Chính sách hỗ trợ</h3></li>
+                        <h:link value="Hướng dẫn mua hàng"/><br/>
+                        <h:link value="Hướng dẫn mua trả góp"/><br/>
+                        <h:link value="Hướng dẫn mua hàng SV"/><br/>
+                        <h:link value="Chính sách giao hàng"/><br/>
+                        <h:link value="Chính sách đổi trả - bảo hành"/><br/>
+                        <h:link value="Quy chế hoạt động"/><br/>
+                       
+                    </ul>
+                </div>
+                <div class="ui-grid-col-3">
+                    <h:panelGrid columns="1" 
+                                 style="background-color:  #f2f2f2;
+                                 background-image:  
+                                 url('/MobileShoppingWebapp/resources/images/footerBackground.png');">
+                        
+                        <h:form>
+                            <h3>Nhận Thông Báo Sản Phẩm Mới</h3>
+                            <p:inputText placeholder="Nhập Email Của Bạn Tại Đây" 
+                                         size="50"/>
+                            <p:commandButton value="Hoàn tất" 
+                                             style="height: 35px; width: 95px;"
+                                             icon="fa fa-envelope-o"/>
+                        </h:form>
+                        <h3>Liên hệ</h3>
+                        <h:panelGrid columns="3">
+                            <h:outputText styleClass="fa fa-facebook-square fa-2x"/>
+                            <h:outputText styleClass="fa fa-google-plus-square fa-2x"/>
+                            <h:outputText styleClass="fa fa-twitter-square fa-2x"/>
+                        </h:panelGrid> 
+                        <span class="glyphicon glyphicon-map-marker"/>
+                        Đường ABCD, Quận E , Tp Đà Nẵng <br/>                           
+                        <span class="glyphicon glyphicon-phone-alt"/>
+                        (08) 38 633 333 - Hotline: 1900 54 54 46 <br/>                         
+                        <span class="glyphicon glyphicon-envelope"/>
+                        cs@mobileshopping.com <br/>  
+
+                    </h:panelGrid>
+                </div>
+            </div>
+        </div>
+    </ui:composition>
+</html>
+
+

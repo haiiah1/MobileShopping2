@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 9, 2015, 6:25:41 PM
+    Author     : Acer E1-571
+*/
+.productheader {
+    
+    background-color: #f2f2f2;
+}
+.ui-widget-content {
+    border: 1px solid #fff;
+}
+
+.ui-carousel.ui-widget.ui-widget-content.ui-corner-all {
+    border: 1px solid #fff;
+}
+
+.ui-widget {
+    font-size: 10px !important;
+}
+
+.ui-widget-header {
+    text-align: left;
+/*    text-transform: uppercase;*/
+    background: #fff;
+}
+
+.ui-datalist.ui-datalist-header{
+    border-bottom: 1px solid #EEE!important;
+    text-align: left!important;
+}

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition>
+        <h:form>
+            <h:panelGrid>
+                <f:view>
+                    <h:form>
+                        <p:growl autoUpdate="false" showDetail="true"/>
+                        <p:panelGrid columns="3" style="border: 1px solid #08C">
+                            <h:panelGrid columns="1" >   
+                                <h:panelGrid>
+                                    <p:graphicImage value="../..#{customerController.cus.picture}"  alt="../..#{customerController.cus.picture}"
+                                                    style="width: 200px; height: 200px;
+                                                    border-radius: 150px;
+                                                    border: 2px #E7E7E7 solid;
+                                                    margin-top: 40px;
+                                                    margin-left: 40px"
+                                                    />
+                                  
+                                    <p:button value="Thay Đổi Ảnh Đại Diện" 
+                                              icon="fa fa-image"
+                                              style="margin-left: 50px"/>
+                                </h:panelGrid>                       
+                                <p:spacer width="220" height="30"/>
+                            </h:panelGrid>
+                            <p:spacer height="10" width="100"/>
+                            <h:panelGrid columns="2" cellspacing="10">
+                                <p:panelGrid columns="2">
+                                    <p:outputLabel value="Name:" for="name" />
+                                    <p:inputText id="name" value="#{customerController.cus.name}" title="Name" />                  
+                                    <p:outputLabel value="Mail:" for="mail" />
+                                    <p:inputText id="mail" value="#{customerController.cus.mail}" title="Mail" required="true" requiredMessage="The Mail field is required."/>
+                                    <p:outputLabel value="Password:" for="password" />
+                                    <p:inputText id="password" value="#{customerController.cus.password}" title="Password" />
+                                    <p:outputLabel value="DateOfBirth:" for="dateOfBirth" />
+                                    <p:inputText id="dateOfBirth" value="#{customerController.cus.dateOfBirth}" title="DateOfBirth" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                    </p:inputText>
+                                    <p:outputLabel value="Phone:" for="tel" />
+                                    <p:inputText id="tel" value="#{customerController.cus.tel}" title="Tel" />
+                                    <p:outputLabel value="Country:" for="country" />
+                                    <p:inputText id="country" value="#{customerController.cus.country}" title="Country" />
+                                    <p:outputLabel value="City:" for="city" />
+                                    <p:inputText id="city" value="#{customerController.cus.city}" title="City" />
+                                    <p:outputLabel value="Address:" for="address" />
+                                    <p:inputText id="address" value="#{customerController.cus.address}" title="Address" />
+                                    <p:outputLabel value="Gender:" for="gender" />
+                                    <p:inputText id="gender" value="#{customerController.cus.gender}" title="Gender" />
+                                </p:panelGrid>
+                            </h:panelGrid>
+                        </p:panelGrid>
+                        <p:commandButton value="Lưu Thay Đổi" action="#{customerController.update()}"
+                                         update="msg"
+                                         style="height: 35px; width: 150px;
+                                         background: #08C; color: #FFF; text-shadow: none;
+                                         margin-left: 400px"/>
+                    </h:form>
+                </f:view>
+
+            </h:panelGrid>
+        </h:form>
+    </ui:composition>
+</html>
+
