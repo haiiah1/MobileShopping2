@@ -42,6 +42,7 @@ public class ProductController implements Serializable {
     List<Product> listnew = null;
     List<Product> ListSearch;
     List<Category> ListCate;
+    List<Product> listmenu;
     String name, manufacturer, catename, addmessage;
     int categoryID,detailID;
     float unit1, unit2;
@@ -59,9 +60,10 @@ public class ProductController implements Serializable {
             addmessage = "Invalid Infor";
             return "/staff/manage/AddProduct.xhtml?faces-redirect=true";
         }
-
     }
-
+    public List<Product> searchMenu(String manuf){
+        return listmenu=productFacade.searchMenuf(manuf);
+    }
     public List<Category> getListCate() {
         ListCate = categoryFacade.findAll();
         return ListCate;
@@ -87,6 +89,14 @@ public class ProductController implements Serializable {
     public String searchProduct() {
         ListSearch = productFacade.searchByName(name);
         return "/service/listProduct.xhtml?faces-redirect=true";
+    }
+
+    public List<Product> getListmenu() {
+        return listmenu;
+    }
+
+    public void setListmenu(List<Product> listmenu) {
+        this.listmenu = listmenu;
     }
 
     public DetailFacade getDetailFacade() {

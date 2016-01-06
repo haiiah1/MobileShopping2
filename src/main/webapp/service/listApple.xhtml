@@ -14,9 +14,9 @@
             <ui:define name="content">
                 <h:panelGrid columns="1" style="width: 800px; margin-left: 100px; border: 1px solid black;">
                     <h:form>
-                        <p:dataGrid var="item" value="#{productController.listSearch}" columns="4" layout="grid"
+                        <p:dataGrid var="item" value="#{productController.searchMenu("Apple")}" columns="4" layout="grid"
                                     rows="12" paginator="true" id="cars"
-                                    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">                                    >                        
+                                    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">                                >                        
 
                             <h:panelGrid columns="1">
                                 <u:productElement product="#{item}"/>

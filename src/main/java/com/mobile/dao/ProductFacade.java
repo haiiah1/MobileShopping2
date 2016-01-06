@@ -28,7 +28,11 @@ public class ProductFacade extends AbstractFacade<Product> {
     protected EntityManager getEntityManager() {
         return em;
     }
-
+    public List<Product> searchMenuf(String manuf){
+        Query q= em.createNamedQuery("Product.findByManufacturer");
+        q.setParameter("manufacturer", manuf);
+        return q.getResultList();
+    }
     public List<Product> searchByName(String name) {
         Query q = em.createNamedQuery("Product.findByName");
         q.setParameter("name", "%" + name + "%");
