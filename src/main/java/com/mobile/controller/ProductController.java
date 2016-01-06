@@ -61,8 +61,14 @@ public class ProductController implements Serializable {
             return "/staff/manage/AddProduct.xhtml?faces-redirect=true";
         }
     }
-    public List<Product> searchMenu(String manuf){
-        return listmenu=productFacade.searchMenuf(manuf);
+    public List<Product> searchMenuSS(){
+        return listmenu=productFacade.searchMenuf("Samsung");
+    }
+    public List<Product> searchMenuApple(){
+        return listmenu=productFacade.searchMenuf("Apple");
+    }
+    public List<Product> searchMenuBlackberry(){
+        return listmenu=productFacade.searchMenuf("Blackberry");
     }
     public List<Category> getListCate() {
         ListCate = categoryFacade.findAll();
