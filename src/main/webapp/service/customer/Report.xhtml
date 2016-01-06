@@ -17,13 +17,13 @@
                             
                             
                             <p:outputLabel for="title" value="Title:" />
-                            <p:inputText value="#{reportController.rp.title}" id="title" style="width: 200px; height: 20px"/>
+                            <p:inputText value="#{reportController.rpt.title}" id="title" style="width: 200px; height: 20px"/>
                             <p:outputLabel for="content" value="Content:"/>
-                            <p:inputTextarea value="#{reportController.rp.content}" id="content" style="width: 200px; height: 100px"/>
+                            <p:inputTextarea value="#{reportController.rpt.content}" id="content" style="width: 200px; height: 100px"/>
                             <p:outputLabel for="mail" value="E-Mail:"/>
-                            <p:inputText value="#{reportController.rp.EMail}" id="mail" style="width: 200px; height: 20px"/>
-                            <p:outputLabel/>
-                            <p:commandButton value="Report" action="#{reportController.addReport()}"/>
+                            <p:inputText value="#{reportController.rpt.email}" id="mail" style="width: 200px; height: 20px"/>
+                            <p:outputLabel value="#{reportController.message}"/>
+                            <p:commandButton value="Report" action="#{reportController.addReport()}" style="float:right"/>
                         </p:panelGrid>
                     </h:form>
                 </div>

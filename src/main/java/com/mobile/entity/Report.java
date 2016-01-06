@@ -9,18 +9,19 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author congt
+ * @author Liem Nguyen
  */
 @Entity
 @Table(name = "report")
@@ -29,16 +30,13 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Report.findAll", query = "SELECT r FROM Report r"),
     @NamedQuery(name = "Report.findByReportID", query = "SELECT r FROM Report r WHERE r.reportID = :reportID"),
     @NamedQuery(name = "Report.findByTitle", query = "SELECT r FROM Report r WHERE r.title = :title"),
+    @NamedQuery(name = "Report.findByEmail", query = "SELECT r FROM Report r WHERE r.email = :email"),
     @NamedQuery(name = "Report.findByStatus", query = "SELECT r FROM Report r WHERE r.status = :status")})
 public class Report implements Serializable {
-    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
-    @Size(max = 45)
-    @Column(name = "E-Mail")
-    private String eMail;
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @NotNull
     @Column(name = "ReportID")
     private Integer reportID;
     @Size(max = 45)
@@ -46,10 +44,14 @@ public class Report implements Serializable {
     private String title;
     @Lob
     @Size(max = 2147483647)
-    @Column(name = "content")
+    @Column(name = "Content")
     private String content;
-    @Size(max = 20)
-    @Column(name = "status")
+    // @Pattern(regexp="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?", message="Invalid email")//if the field contains email address consider using this annotation to enforce field validation
+    @Size(max = 45)
+    @Column(name = "Email")
+    private String email;
+    @Size(max = 45)
+    @Column(name = "Status")
     private String status;
 
     public Report() {
@@ -83,6 +85,14 @@ public class Report implements Serializable {
         this.content = content;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getStatus() {
         return status;
     }
@@ -114,14 +124,6 @@ public class Report implements Serializable {
     @Override
     public String toString() {
         return "com.mobile.entity.Report[ reportID=" + reportID + " ]";
-    }
-
-    public String getEMail() {
-        return eMail;
-    }
-
-    public void setEMail(String eMail) {
-        this.eMail = eMail;
     }
     
 }
