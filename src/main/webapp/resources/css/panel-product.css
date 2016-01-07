@@ -25,9 +25,8 @@ and open the template in the editor.
 
 .ui-widget-header {
     text-align: left;
-/*    text-transform: uppercase;*/
+    /*    text-transform: uppercase;*/
     background: #fff;
-    
 }
 
 .ui-datalist.ui-widget {

@@ -29,6 +29,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     @NamedQuery(name = "Advertisement.findById", query = "SELECT a FROM Advertisement a WHERE a.id = :id"),
     @NamedQuery(name = "Advertisement.findByUrl", query = "SELECT a FROM Advertisement a WHERE a.url = :url")})
 public class Advertisement implements Serializable {
+    @Size(max = 45)
+    @Column(name = "Caption")
+    private String caption;
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -85,6 +88,14 @@ public class Advertisement implements Serializable {
     @Override
     public String toString() {
         return "com.mobile.entity.Advertisement[ id=" + id + " ]";
+    }
+
+    public String getCaption() {
+        return caption;
+    }
+
+    public void setCaption(String caption) {
+        this.caption = caption;
     }
     
 }
